@@ -16,6 +16,7 @@ export default function GetUserGPS(){
                     lng: longitude
                 };
                 console.log(coordenadas)
+                setLocation(coordenadas)
                 //const{lat,lng} = position.coords;
                 //setLocation({lat,lng});
                 
@@ -39,7 +40,7 @@ export default function GetUserGPS(){
             {error?(
                 <p>Error al obtener la ubicación:{error}</p>
             ):location? (
-                <p>Latitud: {lat}, Longitud: {lng}</p>
+                <p>Latitud: {location.lat}, Longitud: {location.lng}</p>
             ):(
                 <p>Cargando ubicación...</p>
             )
