@@ -8,6 +8,7 @@ export default function misionUno(){
             <Map 
                 lat="-36.78137289642085" 
                 lng="-73.19290645917967" 
+                misionIcon={"health.png"}
             />
         </div>
     );

@@ -7,7 +7,12 @@ export default function misionUno(){
         <div>
             <h1>MISION 4</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident similique eveniet mollitia amet architecto quos esse et unde voluptates porro? Optio earum corporis ad quos dolorem impedit libero ipsa asperiores?</p>
-            <Map zone={zone} />
+            <Map
+            lat="-36.77355390537333"
+            lng="-73.16858289080089"
+            misionIcon={"bird.png"}
+            zone={zone} 
+            />
         </div>
     );
 }
