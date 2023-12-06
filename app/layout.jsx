@@ -1,4 +1,4 @@
-import NavBar from "../components/Navbar";
+import NavBar from "../components/navbar.jsx";
 
 export const metadata = {
   title: 'Mapa Aventuras',

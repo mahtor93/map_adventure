@@ -1,5 +1,5 @@
 import Map from "@/components/Map";
-import GetUserGPS from "@/components/GetLocation";
+import GetUserGPS from "@/components/getLocation";
 
 export default function misionUno(){
     return(
