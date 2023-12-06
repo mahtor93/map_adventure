@@ -7,25 +7,29 @@ export default function GetUserGPS(){
     const[location,setLocation] = useState(null);
     const [error, setError] = useState(null);
     const getLocationGPS = () => {
-        if (navigator.geolocation) {
-          const watchId = navigator.geolocation.watchPosition(
-            (position) => {
-              const { lat, lng } = position.coords;
-              setLocation({ lat, lng });
-              console.log(lat, lng);
-            },
-            (error) => {
-              setError(error.message);
-            });
-          return watchId;
-        } else {
-          setError('Geolocalización no soportada');
-        }
-      };
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((position)=>{
+                console.log(position);
+                const coordenadas ={
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(coordenadas)
+                const{lat,lng} = position.coords;
+                setLocation({lat,lng});
+                
+            }, (error)=>{
+                setError(error.message);
+            })
+        }else{
+            setError('Geolocalización no soportada');
+        };
+    }
+/*
     useEffect(() => {
         getLocationGPS();
       }, []);
-
+*/
     return(
         <div>
             <button onClick={getLocationGPS}>
