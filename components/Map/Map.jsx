@@ -9,7 +9,7 @@ let b = -73.19290645917967;
 
 
 export default function Map(props){
-    const {lat,lng,zone} = props
+    const {lat,lng,zone,misionIcon} = props
     return(
         <div>
             <Script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
@@ -24,8 +24,8 @@ export default function Map(props){
                 }).addTo(map);
 
                 let icon = L.icon({
-                    iconUrl: "@/public/leaflet/images/marker-icon.png", //marker-icon.png por defecto ${icon?"mision-icon":"marker-icon.png"}
-                    shadowUrl: "@/public/leaflet/images/marker-shadow.png",
+                    iconUrl: `https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/${misionIcon?"misionIcon":"marker-icon.png"}?raw=true`, //marker-icon.png por defecto ${icon?"mision-icon":"marker-icon.png"}
+                    shadowUrl: "https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/marker-shadow.png?raw=true",
                     iconSize:[25,41],
                     iconAnchor:[12,41],
                     popupAnchor:[1,-34],
