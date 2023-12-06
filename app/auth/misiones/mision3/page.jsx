@@ -10,6 +10,7 @@ export default function misionUno(){
             <Map 
                 lat={lat}
                 lng={lng}
+                misionIcon={"ogre.png"}
             />
         </div>
     );

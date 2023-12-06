@@ -4,6 +4,7 @@ import React from 'react';
 import "@/public/leaflet/leaflet.css";
 import Script from 'next/script';
 
+//centro del mapa
 let a = -36.78137289642085;
 let b = -73.19290645917967;
 
@@ -24,7 +25,7 @@ export default function Map(props){
                 }).addTo(map);
 
                 let icon = L.icon({
-                    iconUrl: `https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/${misionIcon?"misionIcon":"marker-icon.png"}?raw=true`, //marker-icon.png por defecto ${icon?"mision-icon":"marker-icon.png"}
+                    iconUrl: `https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/${misionIcon?misionIcon:"marker-icon.png"}?raw=true`, //marker-icon.png por defecto ${icon?"mision-icon":"marker-icon.png"}
                     shadowUrl: "https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/marker-shadow.png?raw=true",
                     iconSize:[25,41],
                     iconAnchor:[12,41],
