@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import "../../../public/leaflet/leaflet.css";
 export const metadata={
     title:"Mapa Aventuras | Misiones",
     decription: "listado de misiones"
@@ -10,19 +10,19 @@ export default function misionesLayout({children}){
         <nav>
             <ul>
                 <li>
-                    <Link href="/auth/misiones/mision1">Mision 1</Link>
+                    <Link rel="preload" href="/auth/misiones/mision1" as="script">Mision 1</Link>
                 </li>
 
                 <li>
-                    <Link href="/auth/misiones/mision2">Mision 2</Link>
+                    <Link rel="preload" href="/auth/misiones/mision2" as="script">Mision 2</Link>
                 </li>
                 
                 <li>
-                    <Link href="/auth/misiones/mision3">Mision 3</Link>
+                    <Link rel="preload" href="/auth/misiones/mision3" as="script">Mision 3</Link>
                 </li>
 
                 <li>
-                    <Link href="/auth/misiones/mision4">Mision 4</Link>
+                    <Link rel="preload" href="/auth/misiones/mision4" as="script">Mision 4</Link>
                 </li>
             </ul>
         </nav>
