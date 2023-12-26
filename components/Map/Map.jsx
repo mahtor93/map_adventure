@@ -71,11 +71,12 @@ export default function Map(props){
             }}
 
             />
-            <div id="map">
+            <div  id="map">
                 <style jsx>{`
                     #map{
                         height:800px;
-                        width:100%;
+                        width:80%;
+                        border-radius:30px;
                     }
                 `}</style>
             </div>

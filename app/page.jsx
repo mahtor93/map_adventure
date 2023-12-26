@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function homePage(){
+export default function HomePage(){
     return( 
     <div>
         <h1>Iniciar Sesión</h1>

@@ -2,7 +2,7 @@ import Map from "@/components/Map/Map.jsx";
 let lat="-36.753029590670465" 
 let lng="-73.18544740801048"
 
-export default function misionUno(){
+export default function MisionUno(){
     return(
         <div>
             <h1>MISION 3</h1>

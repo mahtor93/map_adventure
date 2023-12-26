@@ -4,7 +4,7 @@ export const metadata={
     title:"Mapa Aventuras | Misiones",
     decription: "listado de misiones"
 }
-export default function misionesLayout({children}){
+export default function MisionesLayout({children}){
     return(
         <>
         <nav>

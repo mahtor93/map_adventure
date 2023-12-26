@@ -1,6 +1,6 @@
 import Map from "@/components/Map/Map.jsx";
 
-export default function misionUno(){
+export default function MisionUno(){
     return(
         <div>
             <h1>MISION 2</h1>

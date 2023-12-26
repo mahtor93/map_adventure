@@ -1,12 +1,35 @@
+'use client'
 import Map from "@/components/Map";
 import GetUserGPS from "@/components/getLocation";
+import obtenerGPS from "@/functions/obtenerCoordenadas";
+import React, { useState }  from 'react';
 
-export default function misionUno(){
+export const misionContext = React.createContext();
+
+export default function MisionUno(){
+    const [coordenadas, setUbicacion] = useState(null);
+    const handleObtenerGPS = () => {
+        obtenerGPS()
+          .then((coordenadas) => {
+            // Actualiza el estado con las coordenadas obtenidas
+            setUbicacion(coordenadas);
+            console.log(coordenadas)
+          })
+          .catch((error) => {
+            console.error("Error al obtener la ubicación:", error);
+          });
+      };
+    
     return(
         <div>
             <h1>MISION 1</h1>
+
+            <button onClick={handleObtenerGPS}>Print Coords</button>
+
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident similique eveniet mollitia amet architecto quos esse et unde voluptates porro? Optio earum corporis ad quos dolorem impedit libero ipsa asperiores?</p>
             
+            
+
             <GetUserGPS />
             
             <Map 
