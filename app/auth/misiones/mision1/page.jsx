@@ -14,7 +14,6 @@ export default function MisionUno(){
         obtenerGPS()
           .then((coordenadas) => {
             setUbicacion(coordenadas);
-            console.log(coordenadas)
           })
           .catch((error) => {
             console.error("Error al obtener la ubicación:", error);
