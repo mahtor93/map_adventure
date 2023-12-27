@@ -75,6 +75,7 @@ export default function Map(props){
                 
 
                     if(coordenadas){
+                        console.log("Coordenadas en el Mapa:")
                         console.log(coordenadas);
                         let map = mapRef.current.leafletElement;
                         let newLatLng = new L.latLng(coordenadas.lat, coordenadas.lng);
