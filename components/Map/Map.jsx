@@ -1,16 +1,24 @@
 'use client';
 //la funcion debe llamarse "Mapa" porque así está importada
-import React from 'react';
+import React, { useContext } from 'react';
 import "@/public/leaflet/leaflet.css";
 import Script from 'next/script';
+import { misionContext } from '@/app/auth/misiones/mision1/page';
 
 //centro del mapa
 let a = -36.78137289642085;
 let b = -73.19290645917967;
 let widthIcon;
 let heightIcon;
+
+
 export default function Map(props){
     const {lat,lng,zone,misionIcon} = props
+
+    const coordenadas = useContext(misionContext);
+
+    console.log(coordenadas);
+
     if(misionIcon){
         //configura el tamaño del ícono a un cuadrado nxn
         widthIcon = 35
@@ -66,7 +74,24 @@ export default function Map(props){
                 }
                 
 
-
+                    if(coordenadas){
+                        console.log(coordenadas);
+                        let map = mapRef.current.leafletElement;
+                        let newLatLng = new L.latLng(coordenadas.lat, coordenadas.lng);
+                        map.setView(newLatLng, map.getZoom());
+            
+                        let userIcon = L.icon({
+                            iconUrl: `https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/battle.png?raw=true`, //marker-icon.png por defecto ${icon?"mision-icon":"marker-icon.png"}
+                            shadowUrl: "https://github.com/mahtor93/map_adventure/blob/dev_mario/public/leaflet/images/marker-shadow.png?raw=true",
+                            iconSize:[widthIcon,heightIcon],
+                            iconAnchor:[12,41],
+                            popupAnchor:[1,-34],
+                            tooltipAnchor:[16,-28]
+                        });
+            
+                        let userMarker = L.marker([coordenadas.lat,coordenadas.lng],{icon:userIcon}).addTo(map);
+                    }
+                
 
             }}
 

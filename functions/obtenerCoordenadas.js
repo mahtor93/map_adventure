@@ -10,6 +10,7 @@ export default function obtenerGPS() {
             lng: longitude,
           };
           resolve(coordenadas);
+          return coordenadas;
         },
         (error) => {
           reject(error.message);
@@ -19,4 +20,6 @@ export default function obtenerGPS() {
       reject("Geolocalización no soportada");
     }
   });
+
+  
 }
